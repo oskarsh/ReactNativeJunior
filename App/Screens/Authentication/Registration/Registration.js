@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-class IntroScreen3 extends Component {
+class Registration extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,16 +11,16 @@ class IntroScreen3 extends Component {
   render() {
     return (
       <View>
-        <Text> IntroScreen3 </Text>
+        <Text> Registration </Text>
         <Button
-          onPress={() => this.props.navigation.navigate("Dashboard")}
-          title="Explore the App"
+          onPress={() => this.props.navigation.navigate("IntroStack")}
+          title="Register"
           color="#841584"
-          accessibilityLabel="This Button will Navigate you to the third"
+          accessibilityLabel="This Button will Log you for the App"
         />
       </View>
     );
   }
 }
 
-export default IntroScreen3;
+export default Registration;
