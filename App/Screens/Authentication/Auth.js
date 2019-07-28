@@ -3,6 +3,7 @@ import { View, Text, Image } from 'react-native';
 import Button from "../../Components/Button/Button"
 import theme, { styles } from 'react-native-theme';
 import {light, dark } from "../../Theme/dark"
+import { styles as themes } from "react-native-theme";
 
 class Auth extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Auth extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Text style={{}}>Authentication</Text>
+        <Text style={themes.header}>Authentication</Text>
         <View style={{flex: 1, alignItems: 'center', margin:10 }}>
           <Image
           style={{width: 200, height: 200}}

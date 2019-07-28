@@ -27,6 +27,25 @@ const colors = {
   gray: "#AAAAAA",
 };
 
+const defaults = {
+  button: {
+    borderRadius: 10,
+    width: "80%",
+    height: 50,
+    justifyContent: 'center',
+    alignSelf: "center",
+    margin: 10,
+  },
+  buttonTitle: {
+    fontSize: 20,
+    textAlign: "center"
+  },
+  header: {
+    fontSize: 35,
+    fontWeight: "bold",
+  }
+}
+
 const light = {
   b60: { color: colors.white60 },
   b70: { color: colors.white70 },
@@ -35,6 +54,11 @@ const light = {
   b100: { color: colors.white100 },
   textColor: { color: colors.dark100 },
   iconColor: { color: colors.dark100 },
+  buttonColor: {backgroundColor: colors.primary},
+  // setting the defaults
+  button: defaults.button,
+  header: defaults.header,
+  title: defaults.buttonTitle,
   textNormal: {
     paddingTop: 5,
     paddingBottom: 10,
@@ -50,6 +74,15 @@ const light = {
     paddingRight: "9%",
   },
 }
+
+const button = {
+  backgroundColor: "red"
+}
+
+const header = {
+  fontSize: 30
+}
+
 const dark = {
   b60: { color: colors.dark60 },
   b70: { color: colors.dark70 },
@@ -70,4 +103,4 @@ const dark = {
   },
 }
 
-export { colors, light, dark };
+export { colors, light, dark, button, header };
