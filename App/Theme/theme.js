@@ -1,3 +1,8 @@
+import _ from "lodash";
+import t from "tcomb-form-native";
+import { Dimensions } from 'react-native';
+
+const window = Dimensions.get('window');
 
 const colors = {
   primary: "#4960de",
@@ -27,6 +32,9 @@ const colors = {
   gray: "#AAAAAA",
 };
 
+
+
+
 const defaults = {
   button: {
     borderRadius: 10,
@@ -48,12 +56,14 @@ const defaults = {
   },
   img: {
     width: "80%",
-    height: 200,
     borderRadius: 10,
+    height: 200,
+    marginBottom: 20,
+    padding:10,
   },
   // Adds shadow to the image, sinde Image itself cannot display shadow but a view can
   imgContainer: {
-    flex: 1, alignItems: 'center', margin: 10, shadowColor: "#000",
+    alignItems: 'center', margin: 10, shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 12,
@@ -63,7 +73,7 @@ const defaults = {
     elevation: 24,
     justifyContent: 'center',
     paddingBottom: 75,
-  }
+  },
 }
 
 const light = {
@@ -125,4 +135,25 @@ const dark = {
   },
 }
 
-export { colors, light, dark, button, header };
+export const IMAGE_HEIGHT = window.width / 2;
+export const IMAGE_HEIGHT_SMALL = window.width /7;
+
+
+
+// TCOMB THEME
+let formStyle = _.cloneDeep(t.form.Form.stylesheet);
+formStyle.textbox.normal.color = "#444";
+formStyle.textbox.normal.height = 55;
+formStyle.textbox.normal.borderWidth = 0;
+formStyle.textbox.error.borderWidth = 0;
+formStyle.textboxView.normal.borderWidth = 0;
+formStyle.textboxView.error.borderWidth = 0;
+formStyle.textboxView.normal.borderRadius = 0;
+formStyle.textboxView.error.borderRadius = 0;
+formStyle.textboxView.normal.borderBottomWidth = 1;
+formStyle.textboxView.normal.borderColor = "#BBBBBB";
+formStyle.textboxView.error.borderBottomWidth = 1;
+formStyle.textboxView.normal.marginBottom = 5;
+formStyle.textboxView.error.marginBottom = 5;
+
+export { light, dark, formStyle };
