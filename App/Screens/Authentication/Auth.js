@@ -6,6 +6,12 @@ import {light, dark } from "../../Theme/dark"
 import { styles as themes } from "react-native-theme";
 
 class Auth extends Component {
+
+    // Hiding the Header for this Screen
+    static navigationOptions = {
+      header: null
+  }
+
   constructor(props) {
     super(props);
     this.state = {

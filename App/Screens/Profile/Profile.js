@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
 class Profile extends Component {
+
+  // Hiding the Header for this Screen
+  static navigationOptions = {
+    header: null
+  }
+
   constructor(props) {
     super(props);
     this.state = {

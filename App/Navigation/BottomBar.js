@@ -7,6 +7,12 @@ import Dashboard from "../Screens/Dashboard/Dashboard"
 import Profile from "../Screens/Profile/Profile"
 
 class MainBottomNavigation extends Component {
+
+  // Hiding the Header for this Screen
+  static navigationOptions = {
+      header: null
+ }
+
   constructor(props) {
     super(props);
   }
