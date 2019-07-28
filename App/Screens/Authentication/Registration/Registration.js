@@ -1,30 +1,156 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
 import Button from "../../../Components/Button/Button"
+import t from "tcomb-form-native";
+import { formStyle } from "../../../Theme/theme"
+import { styles as themes } from "react-native-theme";
+
+
+const Form = t.form.Form;
+
+const User = t.struct({
+  email: t.String,
+  password: t.String,
+});
+
 
 class Registration extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
+      errMsg: "",
     };
   }
 
+  Email = t.refinement(t.String, email => {
+    const reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return reg.test(email);
+  });
+
+  Password = t.refinement(t.String, pass => {
+    let value = this.state.value;
+    let originPass = value.password;
+    console.log(originPass);
+    return pass === originPass;
+  });
+
+  User = t.struct({
+    username: t.String,
+    email: this.Email,
+    password: t.String,
+  });
+  
+  onFormChange = value => {
+    this.setState({ value });
+  };
+
+  options = {
+    stylesheet: formStyle,
+    auto: "placeholders",
+    fields: {
+      username: {
+        error: "Please enter a username",
+        returnKeyType: "next",
+      },
+      email: {
+        error: "Please enter a valid E-Mail Adress",
+        autoComplete: "email",
+        keyboardType: "email-address",
+        textContentType: "emailAddress",
+        returnKeyType: "next",
+      },
+      password: {
+        error: "Please enter your password",
+        textContentType: "password",
+        returnKeyType: "next",
+        secureTextEntry: true,
+        selectTextOnFocus: true,
+      },
+    },
+  };
+
   static navigationOptions = {
-    title: 'Register',
+    title: 'Registration',
+  };
+
+  handleSubmit = () => {
+    const value = this._form.getValue();
+    if (!value) return;
+    this.setState({ loading: true });
+
+    // RegistrationUser(value.email, value.password, (state, data) => {
+    //   if (state === "error") {
+    //     let req = { ...data };
+    //     this.setState({ errMsg: req.message });
+    //     this.setState({ loading: false });
+    //   } else if (state === "success") {
+    //     console.log("submit sucess", data);
+    //     this.setState({ loading: false });
+    //     this.props.navigation.navigate("App");
+    //   }
+    // });
   };
 
   render() {
     return (
-      <View>
-        <Text> Registration </Text>
+      <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : null}
+      keyboardVerticalOffset={120}
+    >
+       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+       <View style={styles.inner}>
+
+        <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+            <Image
+            style={themes.img}
+            source={require('../../../Assets/friendship.png')}
+            />
+        </View>
+        <Form
+            ref={c => (this._form = c)}
+            type={this.User}
+            options={this.options}
+            value={this.state.value}
+            onChange={this.onFormChange}
+          />
         <Button
-          onPress={() => this.props.navigation.navigate("IntroStack")}
-          title="Register"
+          onPress={() => this.props.navigation.navigate("App")}
+          title="Sign In"
           accessibilityLabel="This Button will Log you for the App"
         />
-      </View>
+       </View>
+
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+  },
+  inner: {
+      padding: 24,
+      flex: 1,
+      justifyContent: "flex-end",
+  },
+  header: {
+      fontSize: 36,
+      marginBottom: 48,
+  },
+  input: {
+      height: 40,
+      borderColor: "#000000",
+      borderBottomWidth: 1,
+      marginBottom: 36,
+  },
+  btnContainer: {
+      backgroundColor: "white",
+      marginTop: 12,
+  },
+});
 
 export default Registration;
