@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import Button from "../../../Components/Button/Button"
 
 
 class Login extends Component {
@@ -19,7 +20,6 @@ class Login extends Component {
         <Button
           onPress={() => this.props.navigation.navigate("App")}
           title="Sign In"
-          color="#841584"
           accessibilityLabel="This Button will Log you for the App"
         />
       </View>

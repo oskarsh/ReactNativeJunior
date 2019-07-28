@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Image, Text } from 'react-native';
+import { styles as themes } from "react-native-theme";
+import Button from "../../Components/Button/Button"
 
-class IntroScreen3 extends Component {
+class IntroScreen2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,17 +12,24 @@ class IntroScreen3 extends Component {
 
   render() {
     return (
-      <View>
-        <Text> IntroScreen3 </Text>
+      <View style={{flex: 1}}>
+       <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+            <Image
+            style={themes.img}
+            source={require('../../Assets/abstract-success.png')}
+            />
+        </View>
+        <Text style={[themes.header, {flexGrow: 3,}]}>
+        Wake up with determination. Go to bed with satisfaction.
+        </Text>
         <Button
-          onPress={() => this.props.navigation.navigate("Dashboard")}
+          onPress={() => this.props.navigation.navigate("App")}
           title="Explore the App"
-          color="#841584"
-          accessibilityLabel="This Button will Navigate you to the third"
+          accessibilityLabel="This Button will Navigate you to the second intro screen"
         />
       </View>
     );
   }
 }
 
-export default IntroScreen3;
+export default IntroScreen2;

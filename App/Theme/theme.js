@@ -43,6 +43,26 @@ const defaults = {
   header: {
     fontSize: 35,
     fontWeight: "bold",
+    width: "90%",
+    margin: 10,
+  },
+  img: {
+    width: "80%",
+    height: 200,
+    borderRadius: 10,
+  },
+  // Adds shadow to the image, sinde Image itself cannot display shadow but a view can
+  imgContainer: {
+    flex: 1, alignItems: 'center', margin: 10, shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+    justifyContent: 'center',
+    paddingBottom: 75,
   }
 }
 
@@ -54,11 +74,13 @@ const light = {
   b100: { color: colors.white100 },
   textColor: { color: colors.dark100 },
   iconColor: { color: colors.dark100 },
-  buttonColor: {backgroundColor: colors.primary},
+  buttonColor: { backgroundColor: colors.primary },
   // setting the defaults
   button: defaults.button,
   header: defaults.header,
   title: defaults.buttonTitle,
+  img: defaults.img,
+  imgContainer: defaults.imgContainer,
   textNormal: {
     paddingTop: 5,
     paddingBottom: 10,

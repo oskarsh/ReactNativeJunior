@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Image, Text } from 'react-native';
+import { styles as themes } from "react-native-theme";
+import Button from "../../Components/Button/Button"
 
 class IntroScreen2 extends Component {
   constructor(props) {
@@ -10,13 +12,20 @@ class IntroScreen2 extends Component {
 
   render() {
     return (
-      <View>
-        <Text> IntroScreen2 </Text>
+      <View style={{flex: 1}}>
+       <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+            <Image
+            style={themes.img}
+            source={require('../../Assets/abstract-delivery.png')}
+            />
+        </View>
+        <Text style={[themes.header, {flexGrow: 3,}]}>
+          Don’t stop when you’re tired. Stop when you’re done.
+        </Text>
         <Button
           onPress={() => this.props.navigation.navigate("IntroScreen3")}
           title="Next"
-          color="#841584"
-          accessibilityLabel="This Button will Navigate you to intro screen 3"
+          accessibilityLabel="This Button will Navigate you to the second intro screen"
         />
       </View>
     );
