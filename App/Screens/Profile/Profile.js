@@ -18,7 +18,6 @@ class Profile extends Component {
           color="#841584"
           accessibilityLabel="This Button will Log you for the App"
         />
-        
       </View>
     );
   }

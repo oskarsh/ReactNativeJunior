@@ -8,6 +8,10 @@ class Registration extends Component {
     };
   }
 
+  static navigationOptions = {
+    title: 'Register',
+  };
+
   render() {
     return (
       <View>

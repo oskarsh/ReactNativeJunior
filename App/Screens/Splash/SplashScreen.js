@@ -8,6 +8,11 @@ class SplashScreen extends Component {
     };
   }
 
+  componentDidMount() {
+    // loading app content
+    this.props.navigation.navigate("App")
+  }
+
   render() {
     return (
       <View>

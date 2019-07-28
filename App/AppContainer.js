@@ -8,9 +8,8 @@ import {
   createSwitchNavigator,
   createAppContainer,
 } from "react-navigation";
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
-
+import MainBottomNavigation from "./Navigation/BottomBar"
 import IntroScreen1 from "./Screens/AppIntro/IntroScreen1";
 import IntroScreen2 from "./Screens/AppIntro/IntroScreen2";
 import IntroScreen3 from "./Screens/AppIntro/IntroScreen3";
@@ -48,30 +47,32 @@ const AuthStack = createStackNavigator(
   },
 );
 
-const SettingsStack = createStackNavigator(
+const ProfileStack = createStackNavigator(
   {
     Settings: Settings,
+
+    Profile: Profile,
+  },
+  {initialRouteName: "Profile"}
+)
+
+const SettingsStack = createStackNavigator(
+  {
     General: General,
     About: About,
     PrivacyPolicy: PrivacyPolicy,
     Help: Help,
   },
   {
-    initialRouteName: "Settings",
+    initialRouteName: "General",
   }
 )
 
-const AppStack = createMaterialBottomTabNavigator(
+const AppStack = createStackNavigator(
   {
-    Dashboard: Dashboard,
-    Profile: Profile,
+    Dashboard: MainBottomNavigation,
+    Settings: Settings,
   },
-  {
-    initialRouteName: "Dashboard",
-    activeColor: '#f0edf6',
-    inactiveColor: '#3e2465',
-    barStyle: { backgroundColor: '#694fad' }
-  }
 )
 
 export default createAppContainer(
@@ -82,7 +83,7 @@ export default createAppContainer(
       AuthLoading: AuthLoading,
       Auth: AuthStack,
       Splash: SplashScreen,
-      Settings: SettingsStack
+      _hiddenSettings: SettingsStack
     },
     {
       //TESTING ONLY INITAL ROUTE SHOULD BE AUTHLOADING

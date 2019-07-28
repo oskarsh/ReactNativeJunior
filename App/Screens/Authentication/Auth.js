@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import Button from "../../Components/Button/Button"
+import theme, { styles } from 'react-native-theme';
+import {light, dark } from "../../Theme/dark"
 
 class Auth extends Component {
   constructor(props) {
@@ -7,22 +10,27 @@ class Auth extends Component {
     this.state = {
     };
   }
+
+  componentDidMount() {
+  }
   
   render() {
     return (
-      <View>
-        <Text> Auth </Text>
+      <View style={{flex: 1}}>
+        <Text style={{}}>Authentication</Text>
+        <View style={{flex: 1, alignItems: 'center', margin:10 }}>
+          <Image
+          style={{width: 200, height: 200}}
+          source={require('../../Assets/newspaper.svg')}
+          />
+        </View>
         <Button
           onPress={() => this.props.navigation.navigate("Login")}
-          title="Login"
-          color="#841584"
-          accessibilityLabel="This Button will bring you to the Login Screen"
+          title={"Login"}
         />
         <Button
           onPress={() => this.props.navigation.navigate("Registration")}
-          title="Register"
-          color="#841584"
-          accessibilityLabel="This Button will bring you to the Registration Screen"
+          title={"Register"}
         />
       </View>
     );

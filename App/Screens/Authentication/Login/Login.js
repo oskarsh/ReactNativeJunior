@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -8,10 +9,13 @@ class Login extends Component {
     };
   }
 
+  static navigationOptions = {
+    title: 'Login',
+  };
+
   render() {
     return (
       <View>
-        <Text> Login </Text>
         <Button
           onPress={() => this.props.navigation.navigate("App")}
           title="Sign In"
