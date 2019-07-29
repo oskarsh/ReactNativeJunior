@@ -21,14 +21,16 @@ class Auth extends Component {
   
   render() {
     return (
-      <View style={{flex: 1}}>
-        <Text style={themes.header}>Authentication</Text>
+      <View style={{flex: 1, justifyContent: "space-around"}}>
+        <Text style={themes.header}>Abstraction</Text>
         <View style={themes.imgContainer}>
             <Image
             style={themes.img}
             source={require('../../Assets/abstract1.png')}
             />
         </View>
+        <View>
+
         <Button
           onPress={() => this.props.navigation.navigate("Login")}
           title={"Login"}
@@ -37,6 +39,8 @@ class Auth extends Component {
           onPress={() => this.props.navigation.navigate("Registration")}
           title={"Register"}
         />
+                </View>
+
       </View>
     );
   }
