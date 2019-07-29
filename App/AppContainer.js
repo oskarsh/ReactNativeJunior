@@ -47,15 +47,6 @@ const AuthStack = createStackNavigator(
   },
 );
 
-const ProfileStack = createStackNavigator(
-  {
-    Settings: Settings,
-
-    Profile: Profile,
-  },
-  {initialRouteName: "Profile"}
-)
-
 const SettingsStack = createStackNavigator(
   {
     General: General,
@@ -72,6 +63,7 @@ const AppStack = createStackNavigator(
   {
     Dashboard: MainBottomNavigation,
     Settings: Settings,
+    _settings: SettingsStack
   },
 )
 

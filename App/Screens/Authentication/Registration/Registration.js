@@ -116,8 +116,8 @@ class Registration extends Component {
             onChange={this.onFormChange}
           />
         <Button
-          onPress={() => this.props.navigation.navigate("App")}
-          title="Sign In"
+          onPress={() => this.props.navigation.navigate("IntroScreen1")}
+          title="Sign Up"
           accessibilityLabel="This Button will Log you for the App"
         />
        </View>

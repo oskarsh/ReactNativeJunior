@@ -13,13 +13,13 @@ class IntroScreen1 extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-       <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+       <View style={[themes.imgContainer, {flexGrow: 1,}]}>
             <Image
             style={themes.img}
             source={require('../../Assets/abstract1.png')}
             />
         </View>
-        <Text style={[themes.header, {flexGrow: 3,}]}>
+        <Text style={[themes.header, {flexGrow: 10,}]}>
           Your limitation—it’s only your imagination.
         </Text>
         <Button

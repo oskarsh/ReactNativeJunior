@@ -13,13 +13,13 @@ class IntroScreen2 extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-       <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+       <View style={[themes.imgContainer, {flexGrow: 1,}]}>
             <Image
             style={themes.img}
             source={require('../../Assets/abstract-success.png')}
             />
         </View>
-        <Text style={[themes.header, {flexGrow: 3,}]}>
+        <Text style={[themes.header, {flexGrow: 10,}]}>
         Wake up with determination. Go to bed with satisfaction.
         </Text>
         <Button

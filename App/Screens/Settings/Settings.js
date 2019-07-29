@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
+import { styles as themes } from "react-native-theme";
 
 class Settings extends Component {
   constructor(props) {
@@ -11,7 +12,12 @@ class Settings extends Component {
   render() {
     return (
       <View>
-        <Text> Settings </Text>
+               <View style={[themes.imgContainer, {flexGrow: 1,}]}>
+            <Image
+            style={themes.img}
+            source={require('../../Assets/abstract-success.png')}
+            />
+        </View>
         <Button
           onPress={() => this.props.navigation.navigate("General")}
           title="General"

@@ -107,14 +107,6 @@ const light = {
   },
 }
 
-const button = {
-  backgroundColor: "red"
-}
-
-const header = {
-  fontSize: 30
-}
-
 const dark = {
   b60: { color: colors.dark60 },
   b70: { color: colors.dark70 },
