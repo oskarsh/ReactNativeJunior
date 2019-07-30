@@ -55,7 +55,6 @@ const SettingsStack = createStackNavigator(
     Help: Help,
   },
   {
-    initialRouteName: "General",
     headerMode: "none",
   }
 )
