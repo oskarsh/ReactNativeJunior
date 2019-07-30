@@ -3,6 +3,11 @@ import { View, Text, Button, Image } from 'react-native';
 import { styles as themes } from "react-native-theme";
 
 class Settings extends Component {
+
+  static navigationOptions = {
+    title: 'Settings',
+  };
+
   constructor(props) {
     super(props);
     this.state = {
