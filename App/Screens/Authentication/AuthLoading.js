@@ -18,14 +18,13 @@ class AuthLoading extends Component {
     super(props);
     this._checkJWT()
 
-    // console.disableYellowBox = true;
+    console.disableYellowBox = true;
   }
 
   componentDidMount() {
     theme.add(dark, "dark");
     theme.add(light);
     theme.active();
-
   }
 
   // Fetch the token from storage then navigate to our appropriate place

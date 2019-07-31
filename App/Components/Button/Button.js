@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { styles as themes } from "react-native-theme";
+import { ThemeContext } from "../../Theme/themes"
 
-export default Button = (props) => {
-  return (
-    <TouchableOpacity {...props} style={[themes.button, themes.buttonColor]}> 
-      <Text style={[themes.title, themes.textColor]}> {props.title} </Text>
-    </TouchableOpacity>
-  )
+class Button extends React.Component {
+  render() {
+    let theme = this.context;
+
+    return (
+      <TouchableOpacity {...this.props} style={{backgroundColor: theme.background}}> 
+        <Text style={{}}> {this.props.title} </Text>
+      </TouchableOpacity>
+    )
+  }
+
 }
 
+Button.contextType = ThemeContext;
 
+export default Button;

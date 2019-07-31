@@ -17,9 +17,9 @@
 import React from 'react';
 import {
   SafeAreaView,
-  View
 } from 'react-native';
 import AppContainer from "./App/AppContainer";
+
 
 const App = () => {
   return (
