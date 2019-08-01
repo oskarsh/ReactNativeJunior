@@ -13,30 +13,19 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      theme: themes.light,
     };
   }
 
-  toggleTheme = () => {
-    console.log(themes)
-    this.setState(state => ({
-      theme:
-        state.theme === themes.dark
-          ? themes.light
-          : themes.dark,
-    }));
-  };
 
   render() {
+    theme = this.context.theme;
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme.background}}>
         <Text> Dashboard </Text>
-        <ThemeContext.Provider value={this.state.theme}>
           <Button
             title="change Theme"
             onPress={this.toggleTheme}
           /> 
-        </ThemeContext.Provider>
         <Button
             title="another"
           /> 
@@ -44,4 +33,6 @@ class Dashboard extends Component {
     );
   }
 }
+
+Dashboard.contextType = ThemeContext;
 export default Dashboard;

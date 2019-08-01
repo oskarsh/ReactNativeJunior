@@ -5,6 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 import Dashboard from "../Screens/Dashboard/Dashboard"
 import Profile from "../Screens/Profile/Profile"
+import { ThemeContext } from "../Theme/themes";
 
 class MainBottomNavigation extends Component {
 
@@ -17,7 +18,7 @@ class MainBottomNavigation extends Component {
     super(props);
   }
 
-  createBar = xnav => {
+  createBar = (xnav, theme) => {
     const AppNavigator = createMaterialBottomTabNavigator(
       {
         Dashboard: {
@@ -30,6 +31,7 @@ class MainBottomNavigation extends Component {
         initialRouteName: "Dashboard",
         defaultNavigationOptions: ({ navigation }) => ({
           header: null,
+          barStyle: theme.barStyle,
           tabBarIcon: ({ focused, horizontal, tintColor }) => {
             const { routeName } = navigation.state;
             let iconName;
@@ -62,9 +64,10 @@ class MainBottomNavigation extends Component {
 
   render() {
     const { navigation } = this.props;
-    const NavBar = this.createBar(navigation);
+    const theme = this.context.theme;
+    const NavBar = this.createBar(navigation, theme);
     return <NavBar />;
   }
 }
-
+MainBottomNavigation.contextType = ThemeContext;
 export default MainBottomNavigation;

@@ -7,12 +7,11 @@ class Button extends React.Component {
     let theme = this.context;
 
     return (
-      <TouchableOpacity {...this.props} style={{backgroundColor: theme.background}}> 
-        <Text style={{}}> {this.props.title} </Text>
+      <TouchableOpacity {...this.props} style={[theme.button, theme.buttonColor]}> 
+        <Text style={[theme.title ,theme.b90]}> {this.props.title} </Text>
       </TouchableOpacity>
     )
   }
-
 }
 
 Button.contextType = ThemeContext;

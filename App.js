@@ -19,13 +19,41 @@ import {
   SafeAreaView,
 } from 'react-native';
 import AppContainer from "./App/AppContainer";
+import { ThemeContext, themes } from './App/Theme/themes';
 
 
-const App = () => {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <AppContainer />
-    </SafeAreaView>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleTheme = () => {
+      console.log("TOGGLE THEME");
+      console.log(this.state);
+      this.setState(state => ({
+        theme:
+          state.theme === themes.dark
+            ? themes.light
+            : themes.dark,
+      }));
+    };
+
+    // State also contains the updater function so it will
+    // be passed down into the context provider
+    this.state = {
+      theme: themes.light,
+      toggleTheme: this.toggleTheme,
+    };
+  }
+
+  render() {
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        <ThemeContext.Provider value={this.state}>
+          <AppContainer />
+        </ThemeContext.Provider>
+      </SafeAreaView>
+    )
+  }
+}
+
 export default App;
