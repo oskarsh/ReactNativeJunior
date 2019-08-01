@@ -4,8 +4,7 @@ import { ThemeContext } from "../../Theme/themes"
 
 class Button extends React.Component {
   render() {
-    let theme = this.context;
-
+    let theme = this.context.theme;
     return (
       <TouchableOpacity {...this.props} style={[theme.button, theme.buttonColor]}> 
         <Text style={[theme.title ,theme.b90]}> {this.props.title} </Text>

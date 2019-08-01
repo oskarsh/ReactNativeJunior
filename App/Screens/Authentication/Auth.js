@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, Image } from 'react-native';
 import Button from "../../Components/Button/Button"
-import { styles as themes } from "react-native-theme";
+import { ThemeContext } from '../../Theme/themes';
 
-class Auth extends Component {
+class Auth extends React.Component {
 
   // Hiding the Header for this Screen
   static navigationOptions = {
@@ -20,12 +20,13 @@ class Auth extends Component {
   }
 
   render() {
+    theme = this.context.theme;
     return (
       <View style={{ flex: 1, justifyContent: "space-around" }}>
-        <Text style={themes.header}>Abstraction</Text>
-        <View style={themes.imgContainer}>
+        <Text style={theme.header}>Abstraction</Text>
+        <View style={theme.imgContainer}>
           <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../Assets/abstract1.png')}
           />
         </View>
@@ -45,4 +46,5 @@ class Auth extends Component {
   }
 }
 
+Auth.contextType = ThemeContext;
 export default Auth;

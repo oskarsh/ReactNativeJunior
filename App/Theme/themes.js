@@ -101,7 +101,6 @@ export const themes = {
       paddingLeft: "9%",
       paddingRight: "9%",
     },
-    btBackground: "green",
   },
 
 
@@ -109,7 +108,34 @@ export const themes = {
   dark: {
     foreground: '#ffffff',
     background: '#222222',
-    btBackground: "blue",
+    b60: { color: colors.white60 },
+    b70: { color: colors.white70 },
+    b80: { color: colors.white80 },
+    b90: { color: colors.white90 },
+    b100: { color: colors.white100 },
+    textColor: { color: colors.dark100 },
+    iconColor: { color: colors.dark100 },
+    buttonColor: { backgroundColor: colors.primary },
+    // setting the defaults
+    button: defaults.button,
+    header: defaults.header,
+    title: defaults.buttonTitle,
+    img: defaults.img,
+    imgContainer: defaults.imgContainer,
+    textNormal: {
+      paddingTop: 5,
+      paddingBottom: 10,
+    },
+    barStyle: {
+      backgroundColor: colors.darkBackground,
+      width: "100%",
+      alignSelf: "center",
+      shadowOpacity: 0,
+      alignItems: "center",
+      alignSelf: "center",
+      paddingLeft: "9%",
+      paddingRight: "9%",
+    },
   },
 };
 
