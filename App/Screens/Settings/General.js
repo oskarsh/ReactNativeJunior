@@ -8,6 +8,15 @@ import Button from "../../Components/Button/Button"
 
 class General extends Component {
 
+  static navigationOptions = ({ screenProps }) => {
+    let theme = screenProps.theme
+    return {
+      title: 'General',
+      headerTintColor: theme.foreground,
+      headerStyle: { backgroundColor: theme.background},
+    };
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,12 +25,12 @@ class General extends Component {
   }
 
   onPress = () => {
-
   }
 
   render() {
+    theme = this.context.theme;
     return (
-      <View style={{ flex: 1, }}>
+      <View style={{ flex: 1, backgroundColor: theme.background}}>
         <View style={{ flex: 1, flexDirection: "row", height: 50 }}>
           <View style={{ flex: 1, flexGrow: 2, alignItems: 'center', padding: 5 }}>
             <Text>Toggle Theme</Text>
@@ -42,4 +51,5 @@ class General extends Component {
   }
 }
 
+General.contextType = ThemeContext;
 export default General;

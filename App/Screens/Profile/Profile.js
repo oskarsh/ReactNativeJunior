@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import { ThemeContext } from '../../Theme/themes';
+import Button from "../../Components/Button/Button"
 
 class Profile extends Component {
 
@@ -15,6 +17,7 @@ class Profile extends Component {
   }
 
   render() {
+    theme = this.context.theme;
     return (
       <View>
         <Text> Profile </Text>
@@ -29,4 +32,5 @@ class Profile extends Component {
   }
 }
 
+Profile.contextType = ThemeContext;
 export default Profile;

@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <ThemeContext.Provider value={this.state}>
-          <AppContainer />
+          <AppContainer screenProps={{ theme: this.state.theme }}/>
         </ThemeContext.Provider>
       </SafeAreaView>
     )

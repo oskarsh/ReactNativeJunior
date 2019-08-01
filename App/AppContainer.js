@@ -18,23 +18,9 @@ import Auth from "./Screens/Authentication/Auth";
 import SplashScreen from "./Screens/Splash/SplashScreen";
 import Login from "./Screens/Authentication/Login/Login"
 import Registration from "./Screens/Authentication/Registration/Registration"
-import Dashboard from "./Screens/Dashboard/Dashboard"
-import Profile from "./Screens/Profile/Profile"
-import Settings from "./Screens/Settings/Settings"
-import General from "./Screens/Settings/General"
-import About from "./Screens/Settings/About"
-import Help from "./Screens/Settings/Help"
-import PrivacyPolicy from "./Screens/Settings/PrivacyPolicy"
+import IntroStack from "./Navigation/IntroStack"
+import ProfileStack from "./Navigation/ProfileStack";
 
-
-const AppIntroStack = createSwitchNavigator(
-  {
-    IntroScreen1: IntroScreen1,
-    IntroScreen2: IntroScreen2,
-    IntroScreen3: IntroScreen3,
-  },
-  { initialRouteName: "IntroScreen1" },
-);
 
 const AuthStack = createStackNavigator(
   {
@@ -47,35 +33,16 @@ const AuthStack = createStackNavigator(
   },
 );
 
-const SettingsStack = createStackNavigator(
-  {
-    General: General,
-    About: About,
-    PrivacyPolicy: PrivacyPolicy,
-    Help: Help,
-  },
-  {
-    headerMode: "none",
-  }
-)
-
-const AppStack = createStackNavigator(
-  {
-    Dashboard: MainBottomNavigation,
-    Settings: Settings,
-    _settings: SettingsStack
-  },
-)
 
 export default createAppContainer(
   createSwitchNavigator(
     {
-      IntroStack: AppIntroStack,
-      App: AppStack,
+      IntroStack: IntroStack,
+      App: MainBottomNavigation,
       AuthLoading: AuthLoading,
       Auth: AuthStack,
       Splash: SplashScreen,
-      _hiddenSettings: SettingsStack
+      Profile: ProfileStack,
     },
     {
       //TESTING ONLY INITAL ROUTE SHOULD BE AUTHLOADING

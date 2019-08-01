@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image } from 'react-native';
-import { styles as themes } from "react-native-theme";
+import { ThemeContext } from '../../Theme/themes';
 
 class Settings extends Component {
 
-  static navigationOptions = {
-    title: 'Settings',
+  static navigationOptions = ({ screenProps }) => {
+    let theme = screenProps.theme
+    return {
+      title: 'Settings',
+      headerTintColor: theme.foreground,
+      headerStyle: { backgroundColor: theme.background},
+    };
   };
 
   constructor(props) {
@@ -15,16 +20,17 @@ class Settings extends Component {
   }
 
   render() {
+    console.log(this.props.navigation)
     return (
       <View>
-               <View style={[themes.imgContainer, {flexGrow: 1,}]}>
+       <View style={[theme.imgContainer, {flexGrow: 1,}]}>
             <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../Assets/abstract-success.png')}
             />
         </View>
         <Button
-          onPress={() => this.props.navigation.navigate("General")}
+          onPress={() => this.props.navigation.push("General")}
           title="General"
           color="#841584"
           accessibilityLabel="This Button will Log you for the App"
@@ -58,4 +64,5 @@ class Settings extends Component {
   }
 }
 
+Settings.contextType = ThemeContext;
 export default Settings;

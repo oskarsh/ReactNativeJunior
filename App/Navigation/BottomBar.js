@@ -3,28 +3,24 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import Dashboard from "../Screens/Dashboard/Dashboard"
-import Profile from "../Screens/Profile/Profile"
+
 import { ThemeContext } from "../Theme/themes";
+
+import DashboardStack from "../Navigation/DashboardStack"
+import ProfileStack from "../Navigation/ProfileStack"
 
 class MainBottomNavigation extends Component {
 
   // Hiding the Header for this Screen
-  static navigationOptions = {
-      header: null
+ static navigationOptions = {
+   header: "none"
  }
-
-  constructor(props) {
-    super(props);
-  }
 
   createBar = (xnav, theme) => {
     const AppNavigator = createMaterialBottomTabNavigator(
       {
-        Dashboard: {
-          screen: () => <Dashboard navigation={xnav} />,
-        },
-        Profile: { screen: () => <Profile navigation={xnav} /> },
+        Dashboard: DashboardStack, 
+        Profile: ProfileStack,
       },
       {
         // barStyle: styles.barStyle,
@@ -66,7 +62,7 @@ class MainBottomNavigation extends Component {
     const { navigation } = this.props;
     const theme = this.context.theme;
     const NavBar = this.createBar(navigation, theme);
-    return <NavBar />;
+  return <NavBar screenProps={{theme: theme}}/>;
   }
 }
 MainBottomNavigation.contextType = ThemeContext;
