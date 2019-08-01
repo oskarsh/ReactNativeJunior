@@ -1,4 +1,7 @@
 import React from "react";
+import _ from "lodash";
+import t from "tcomb-form-native"
+
 
 const colors = {
   primary: "#4960de",
@@ -70,6 +73,7 @@ const defaults = {
 }
 
 export const themes = {
+  // ------- IMPLEMENT YOUR DARK THEME HERE ---------
   light: {
     foreground: '#000000',
     background: '#C3B7ED',
@@ -138,6 +142,23 @@ export const themes = {
     },
   },
 };
+
+// TCOMB THEME
+let formStyle = _.cloneDeep(t.form.Form.stylesheet);
+formStyle.textbox.normal.color = "#444";
+formStyle.textbox.normal.height = 55;
+formStyle.textbox.normal.borderWidth = 0;
+formStyle.textbox.error.borderWidth = 0;
+formStyle.textboxView.normal.borderWidth = 0;
+formStyle.textboxView.error.borderWidth = 0;
+formStyle.textboxView.normal.borderRadius = 0;
+formStyle.textboxView.error.borderRadius = 0;
+formStyle.textboxView.normal.borderBottomWidth = 1;
+formStyle.textboxView.normal.borderColor = "#BBBBBB";
+formStyle.textboxView.error.borderBottomWidth = 1;
+formStyle.textboxView.normal.marginBottom = 5;
+formStyle.textboxView.error.marginBottom = 5;
+export { formStyle } 
 
 // Make sure the shape of the default value passed to
 // createContext matches the shape that the consumers expect!

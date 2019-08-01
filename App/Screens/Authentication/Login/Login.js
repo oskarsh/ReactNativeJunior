@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
 import Button from "../../../Components/Button/Button"
 import t from "tcomb-form-native";
-import { formStyle } from "../../../Theme/theme"
-import { styles as themes } from "react-native-theme";
+import { formStyle, ThemeContext } from "../../../Theme/themes"
 
 
 const Form = t.form.Form;
 
-const User = t.struct({
-  email: t.String,
-  password: t.String,
-});
+
 
 
 class Login extends Component {
@@ -22,6 +18,11 @@ class Login extends Component {
       errMsg: "",
     };
   }
+
+  User = t.struct({
+    email: t.String,
+    password: t.String,
+  });
 
   options = {
     stylesheet: formStyle,
@@ -72,6 +73,7 @@ class Login extends Component {
   };
 
   render() {
+    theme = this.context.theme;
     return (
       <KeyboardAvoidingView
       style={styles.container}
@@ -81,15 +83,15 @@ class Login extends Component {
        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
        <View style={styles.inner}>
 
-        <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+        <View style={[theme.imgContainer, {flexGrow: 4,}]}>
             <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../../Assets/abstract-3.png')}
             />
         </View>
         <Form
             ref={c => (this._form = c)}
-            type={User}
+            type={this.User}
             options={this.options}
             value={this.state.value}
             onChange={this.onFormChange}
@@ -132,4 +134,5 @@ const styles = StyleSheet.create({
   },
 });
 
+Login.contextType = ThemeContext
 export default Login;

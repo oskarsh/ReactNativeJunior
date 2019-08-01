@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
-import { styles as themes } from "react-native-theme";
 import Button from "../../Components/Button/Button"
+import { ThemeContext } from '../../Theme/themes';
 
-class IntroScreen2 extends Component {
+class IntroScreen3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,15 +11,16 @@ class IntroScreen2 extends Component {
   }
 
   render() {
+    theme = this.context.theme;
     return (
       <View style={{flex: 1}}>
-       <View style={[themes.imgContainer, {flexGrow: 1,}]}>
+       <View style={[theme.imgContainer, {flexGrow: 1,}]}>
             <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../Assets/abstract-success.png')}
             />
         </View>
-        <Text style={[themes.header, {flexGrow: 10,}]}>
+        <Text style={[theme.header, {flexGrow: 10,}]}>
         Wake up with determination. Go to bed with satisfaction.
         </Text>
         <Button
@@ -32,4 +33,6 @@ class IntroScreen2 extends Component {
   }
 }
 
-export default IntroScreen2;
+IntroScreen3.contextType = ThemeContext;
+export default IntroScreen3;
+

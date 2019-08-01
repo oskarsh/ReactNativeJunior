@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
 import Button from "../../../Components/Button/Button"
 import t from "tcomb-form-native";
-import { formStyle } from "../../../Theme/theme"
-import { styles as themes } from "react-native-theme";
+import { ThemeContext, formStyle } from '../../../Theme/themes';
 
 
 const Form = t.form.Form;
-
-const User = t.struct({
-  email: t.String,
-  password: t.String,
-});
-
 
 class Registration extends Component {
   constructor(props) {
@@ -93,6 +86,7 @@ class Registration extends Component {
   };
 
   render() {
+    theme = this.context.theme;
     return (
       <KeyboardAvoidingView
       style={styles.container}
@@ -102,9 +96,9 @@ class Registration extends Component {
        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
        <View style={styles.inner}>
 
-        <View style={[themes.imgContainer, {flexGrow: 4,}]}>
+        <View style={[theme.imgContainer, {flexGrow: 4,}]}>
             <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../../Assets/friendship.png')}
             />
         </View>
@@ -153,4 +147,5 @@ const styles = StyleSheet.create({
   },
 });
 
+Registration.contextType = ThemeContext;
 export default Registration;

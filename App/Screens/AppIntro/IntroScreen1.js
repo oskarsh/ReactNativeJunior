@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import { styles as themes } from "react-native-theme";
 import Button from "../../Components/Button/Button"
+import { ThemeContext } from '../../Theme/themes';
 
 class IntroScreen1 extends Component {
   constructor(props) {
@@ -11,15 +11,16 @@ class IntroScreen1 extends Component {
   }
 
   render() {
+    theme = this.context.theme;
     return (
       <View style={{flex: 1}}>
-       <View style={[themes.imgContainer, {flexGrow: 1,}]}>
+       <View style={[theme.imgContainer, {flexGrow: 1,}]}>
             <Image
-            style={themes.img}
+            style={theme.img}
             source={require('../../Assets/abstract1.png')}
             />
         </View>
-        <Text style={[themes.header, {flexGrow: 10,}]}>
+        <Text style={[theme.header, {flexGrow: 10,}]}>
           Your limitation—it’s only your imagination.
         </Text>
         <Button
@@ -32,4 +33,5 @@ class IntroScreen1 extends Component {
   }
 }
 
+IntroScreen1.contextType = ThemeContext;
 export default IntroScreen1;
