@@ -9,9 +9,6 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-import theme from "react-native-theme";
-import { light, dark } from "../../Theme/theme";
-
 
 class AuthLoading extends Component {
   constructor(props) {
@@ -22,9 +19,6 @@ class AuthLoading extends Component {
   }
 
   componentDidMount() {
-    theme.add(dark, "dark");
-    theme.add(light);
-    theme.active();
   }
 
   // Fetch the token from storage then navigate to our appropriate place

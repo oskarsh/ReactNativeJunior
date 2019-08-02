@@ -19,7 +19,7 @@ class Profile extends Component {
   render() {
     theme = this.context.theme;
     return (
-      <View>
+      <View style={{flex: 1, backgroundColor: theme.background}}>
         <Text> Profile </Text>
         <Button
           onPress={() => this.props.navigation.navigate("Settings")}

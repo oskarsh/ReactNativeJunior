@@ -13,7 +13,7 @@ class IntroScreen3 extends Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: theme.background}}>
        <View style={[theme.imgContainer, {flexGrow: 1,}]}>
             <Image
             style={theme.img}

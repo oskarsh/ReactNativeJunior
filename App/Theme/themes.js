@@ -77,6 +77,9 @@ export const themes = {
   light: {
     foreground: '#000000',
     background: '#C3B7ED',
+    tabBarActiveTintColor: "#373737",
+    tabBarInactiveTintColor: "#c0c9d6",
+    tabBarBackgroundColor: "#ffffff",
     b60: { color: colors.white60 },
     b70: { color: colors.white70 },
     b80: { color: colors.white80 },
@@ -112,6 +115,9 @@ export const themes = {
   dark: {
     foreground: '#ffffff',
     background: '#222222',
+    tabBarActiveTintColor: "#1da2ff",
+    tabBarInactiveTintColor: "#57668d",
+    tabBarBackgroundColor: "#161f35",
     b60: { color: colors.white60 },
     b70: { color: colors.white70 },
     b80: { color: colors.white80 },

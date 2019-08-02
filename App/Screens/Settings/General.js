@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import SwitchToggle from 'react-native-switch-toggle';
-import { light, dark } from "../../Theme/theme";
-// import theme, { styles as themes } from "react-native-theme";
 import { ThemeContext } from '../../Theme/themes';
 import Button from "../../Components/Button/Button"
 

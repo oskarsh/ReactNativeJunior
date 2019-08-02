@@ -63,9 +63,15 @@ class Registration extends Component {
     },
   };
 
-  static navigationOptions = {
-    title: 'Registration',
+  static navigationOptions = ({ screenProps }) => {
+    let theme = screenProps.theme
+    return {
+      title: 'Registration',
+      headerTintColor: theme.foreground,
+      headerStyle: { backgroundColor: theme.background},
+    };
   };
+
 
   handleSubmit = () => {
     const value = this._form.getValue();
@@ -89,7 +95,7 @@ class Registration extends Component {
     theme = this.context.theme;
     return (
       <KeyboardAvoidingView
-      style={styles.container}
+      style={{flex: 1, backgroundColor: theme.background}}
       behavior={Platform.OS === "ios" ? "padding" : null}
       keyboardVerticalOffset={120}
     >

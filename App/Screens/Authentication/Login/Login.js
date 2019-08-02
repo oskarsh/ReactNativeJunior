@@ -11,6 +11,17 @@ const Form = t.form.Form;
 
 
 class Login extends Component {
+
+  static navigationOptions = ({ screenProps }) => {
+    let theme = screenProps.theme
+    return {
+      title: 'Login',
+      headerTintColor: theme.foreground,
+      headerStyle: { backgroundColor: theme.background},
+    };
+  };
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -50,9 +61,7 @@ class Login extends Component {
     this.setState({ value });
   };
 
-  static navigationOptions = {
-    title: 'Login',
-  };
+
 
   handleSubmit = () => {
     const value = this._form.getValue();
@@ -76,7 +85,7 @@ class Login extends Component {
     theme = this.context.theme;
     return (
       <KeyboardAvoidingView
-      style={styles.container}
+      style={{flex: 1, backgroundColor: theme.background}}
       behavior={Platform.OS === "ios" ? "padding" : null}
       keyboardVerticalOffset={170}
     >
