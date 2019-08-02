@@ -105,7 +105,7 @@ class Registration extends Component {
         <View style={[theme.imgContainer, {flexGrow: 4,}]}>
             <Image
             style={theme.img}
-            source={require('../../../Assets/friendship.png')}
+            source={require('../../../Assets/flame-8.png')}
             />
         </View>
         <Form

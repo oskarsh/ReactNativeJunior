@@ -4,7 +4,7 @@ import t from "tcomb-form-native"
 
 const defaults = {
 
-  primary: "#4960de",
+  primary: "#ff3a00",
   success: "#2aebbf",
   info: "#00ecff",
   warning: "#ffee59",

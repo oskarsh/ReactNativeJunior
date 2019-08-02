@@ -94,7 +94,7 @@ class Login extends Component {
         <View style={[theme.imgContainer, {flexGrow: 4,}]}>
             <Image
             style={theme.img}
-            source={require('../../../Assets/abstract-3.png')}
+            source={require('../../../Assets/flame-sign-up.png')}
             />
         </View>
         <Form

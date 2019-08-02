@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ThemedText from "../../Components/ThemedComponents/ThemedText"
+import ThemedHeader from "../../Components/ThemedComponents/ThemedHeader"
 import ThemedView from "../../Components/ThemedComponents/ThemedView"
 
 class About extends Component {
@@ -22,7 +22,7 @@ class About extends Component {
   render() {
     return (
       <ThemedView style={{flex: 1}}>
-        <ThemedText> About </ThemedText>
+        <ThemedHeader> About </ThemedHeader>
       </ThemedView>
     );
   }
