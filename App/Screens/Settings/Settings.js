@@ -32,31 +32,34 @@ class Settings extends Component {
         <Button
           onPress={() => this.props.navigation.push("General")}
           title="General"
-          color="#841584"
+         style={{margin: 5}}
+
           accessibilityLabel="This Button will Log you for the App"
         />
         <Button
           onPress={() => this.props.navigation.navigate("About")}
           title="About"
-          color="#841584"
+          style={{margin: 5}}
+
           accessibilityLabel="This Button will Log you for the App"
         />
         <Button
           onPress={() => this.props.navigation.navigate("Help")}
           title="Help"
-          color="#841584"
+          style={{margin: 5}}
+
           accessibilityLabel="This Button will Log you for the App"
         />
         <Button
           onPress={() => this.props.navigation.navigate("PrivacyPolicy")}
           title="Privacy Policy"
-          color="#841584"
+          style={{margin: 5}}
           accessibilityLabel="This Button will Log you for the App"
         />
         <Button
           onPress={() => this.props.navigation.navigate("Auth")}
           title="Logout"
-          color="#841584"
+          style={{margin: 5}}
           accessibilityLabel="This Button will Log you for the App"
         />
       </View>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-
+import { View } from 'react-native';
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
 class Help extends Component {
 
   static navigationOptions = ({ screenProps }) => {
@@ -20,9 +21,9 @@ class Help extends Component {
 
   render() {
     return (
-      <View>
-        <Text> Help </Text>
-      </View>
+      <ThemedView style={{flex: 1}}>
+        <ThemedText> Help </ThemedText>
+      </ThemedView>
     );
   }
 }

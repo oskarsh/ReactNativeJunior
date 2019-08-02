@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
 
 class About extends Component {
 
@@ -20,9 +21,9 @@ class About extends Component {
 
   render() {
     return (
-      <View>
-        <Text> About </Text>
-      </View>
+      <ThemedView style={{flex: 1}}>
+        <ThemedText> About </ThemedText>
+      </ThemedView>
     );
   }
 }

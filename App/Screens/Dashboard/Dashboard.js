@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import {ThemeContext, themes} from '../../Theme/themes';
-import Button from "../../Components/Button/Button"
+import Button from "../../Components/ThemedComponents/ThemedButton"
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
 
 class Dashboard extends Component {
 
@@ -20,16 +22,11 @@ class Dashboard extends Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{flex: 1, backgroundColor: theme.background}}>
-        <Text> Dashboard </Text>
-          <Button
-            title="change Theme"
-            onPress={this.toggleTheme}
-          /> 
-        <Button
-            title="another"
-          /> 
-      </View>
+      <ThemedView style={{flex: 1}}>
+      <SafeAreaView >
+        <ThemedText> Dashboard </ThemedText>
+      </SafeAreaView>
+      </ThemedView>
     );
   }
 }

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import SwitchToggle from 'react-native-switch-toggle';
 import { ThemeContext } from '../../Theme/themes';
-import Button from "../../Components/Button/Button"
+import ThemedButton from "../../Components/ThemedComponents/ThemedButton"
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
+
 
 class General extends Component {
 
@@ -28,15 +31,15 @@ class General extends Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{ flex: 1, backgroundColor: theme.background}}>
+      <ThemedView style={{ flex: 1}}>
         <View style={{ flex: 1, flexDirection: "row", height: 50 }}>
           <View style={{ flex: 1, flexGrow: 2, alignItems: 'center', padding: 5 }}>
-            <Text>Toggle Theme</Text>
+            <ThemedText>Toggle Theme</ThemedText>
           </View>
           <View style={{ flex: 1, alignItems: 'center', padding: 5 }}>
             <ThemeContext.Consumer>
               {({ theme, toggleTheme }) => (
-                <Button
+                <ThemedButton
                   title="toggle theme"
                   onPress={toggleTheme}
                 />
@@ -44,7 +47,7 @@ class General extends Component {
             </ThemeContext.Consumer>
           </View>
         </View>
-      </View>
+      </ThemedView>
     );
   }
 }

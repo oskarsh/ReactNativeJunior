@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
-import Button from "../../../Components/Button/Button"
+import Button from "../../../Components/ThemedComponents/ThemedButton"
 import t from "tcomb-form-native";
 import { formStyle, ThemeContext } from "../../../Theme/themes"
 
@@ -36,7 +36,6 @@ class Login extends Component {
   });
 
   options = {
-    stylesheet: formStyle,
     auto: "placeholders",
     fields: {
       email: {
@@ -99,6 +98,7 @@ class Login extends Component {
             />
         </View>
         <Form
+            stylesheet={formStyle}
             ref={c => (this._form = c)}
             type={this.User}
             options={this.options}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-
+import { View } from 'react-native';
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
 class PrivacyPolicy extends Component {
 
   static navigationOptions = ({ screenProps }) => {
@@ -20,9 +21,10 @@ class PrivacyPolicy extends Component {
 
   render() {
     return (
-      <View>
-        <Text> PrivacyPolicy </Text>
-      </View>
+      <ThemedView style={{flex: 1}}>
+
+        <ThemedText> PrivacyPolicy </ThemedText>
+      </ThemedView>
     );
   }
 }

@@ -33,27 +33,31 @@ export default createBottomTabNavigator(
     Dashboard: {
       screen: DashboardStack,
       navigationOptions: {
-        tabBarLabel: "Dashboard",
+        // tabBarLabel: "Dashboard",
         tabBarIcon: ({ tintColor }) => (
           <Ionicons name="ios-flame" size={30} color={tintColor} />
-        )
+        ),
       }
     },
     Profile: {
       screen: ProfileStack,
       navigationOptions: {
-        tabBarLabel: "Profile",
+        // tabBarLabel: "Profile",
         tabBarIcon: ({ tintColor }) => (
           <Ionicons name="ios-person" size={30} color={tintColor} />
         )
       }
     },
   },
-  
+
   {
     tabBarComponent: props =>
       <TabBarComponent
         {...props}
       />,
+    tabBarOptions: {
+      showLabel: false
+    },
+    
   },
 );

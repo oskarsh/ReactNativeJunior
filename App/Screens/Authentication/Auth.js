@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import Button from "../../Components/Button/Button"
+import Button from "../../Components/ThemedComponents/ThemedButton"
 import { ThemeContext } from '../../Theme/themes';
 
 class Auth extends React.Component {

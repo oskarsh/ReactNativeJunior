@@ -2,36 +2,20 @@ import React from "react";
 import _ from "lodash";
 import t from "tcomb-form-native"
 
+const defaults = {
 
-const colors = {
   primary: "#4960de",
   success: "#2aebbf",
   info: "#00ecff",
-  custom: "#f8a4d8",
   warning: "#ffee59",
   lPrimary: "#dfedff",
   lSuccess: "#d2f4ed",
   lInfo: "#d6f4f7",
   lCustom: "#fbe6ff",
   lWarning: "#f8f5d5",
-  white60: "#a1a1a7",
-  white70: "#b9b8be",
-  white80: "#d0d0d3",
-  white90: "#e8e7e9",
-  white100: "#fff",
-  dark60: "#73727c",
-  dark70: "#525255",
-  dark80: "#3a3a3d",
-  dark90: "#282828",
-  dark100: "#151425",
-  whiteBackground: "#fff",
-  darkBackground: "#222",
   purple: "#918dfd",
   darkPurple: "#191847",
-  gray: "#AAAAAA",
-};
 
-const defaults = {
   button: {
     borderRadius: 10,
     width: "80%",
@@ -75,23 +59,19 @@ const defaults = {
 export const themes = {
   // ------- IMPLEMENT YOUR DARK THEME HERE ---------
   light: {
-    foreground: '#000000',
-    background: '#C3B7ED',
+    foreground: 'black',
+    background: '#fffdff',
     tabBarActiveTintColor: "#373737",
     tabBarInactiveTintColor: "#c0c9d6",
-    tabBarBackgroundColor: "#ffffff",
-    b60: { color: colors.white60 },
-    b70: { color: colors.white70 },
-    b80: { color: colors.white80 },
-    b90: { color: colors.white90 },
-    b100: { color: colors.white100 },
-    textColor: { color: colors.dark100 },
-    iconColor: { color: colors.dark100 },
-    buttonColor: { backgroundColor: colors.primary },
+    tabBarBackgroundColor: "#fffdff",
+    textColor: "black",
+    iconColor: '#C3B7ED',
+    buttonColor: { backgroundColor: defaults.primary },
     // setting the defaults
     button: defaults.button,
     header: defaults.header,
     title: defaults.buttonTitle,
+    titleColor: { color: "#fffdff" },
     img: defaults.img,
     imgContainer: defaults.imgContainer,
     textNormal: {
@@ -99,7 +79,7 @@ export const themes = {
       paddingBottom: 10,
     },
     barStyle: {
-      backgroundColor: colors.whiteBackground,
+      backgroundColor: "#fffeef",
       width: "100%",
       alignSelf: "center",
       shadowOpacity: 0,
@@ -113,19 +93,15 @@ export const themes = {
 
   // ------- IMPLEMENT YOUR DARK THEME HERE ---------
   dark: {
-    foreground: '#ffffff',
+    foreground: 'white',
     background: '#222222',
     tabBarActiveTintColor: "#1da2ff",
     tabBarInactiveTintColor: "#57668d",
     tabBarBackgroundColor: "#161f35",
-    b60: { color: colors.white60 },
-    b70: { color: colors.white70 },
-    b80: { color: colors.white80 },
-    b90: { color: colors.white90 },
-    b100: { color: colors.white100 },
-    textColor: { color: colors.dark100 },
-    iconColor: { color: colors.dark100 },
-    buttonColor: { backgroundColor: colors.primary },
+    textColor: "white",
+    titleColor: { color: "white" },
+    iconColor: { color: "white"},
+    buttonColor: { backgroundColor: defaults.primary },
     // setting the defaults
     button: defaults.button,
     header: defaults.header,
@@ -136,24 +112,17 @@ export const themes = {
       paddingTop: 5,
       paddingBottom: 10,
     },
-    barStyle: {
-      backgroundColor: colors.darkBackground,
-      width: "100%",
-      alignSelf: "center",
-      shadowOpacity: 0,
-      alignItems: "center",
-      alignSelf: "center",
-      paddingLeft: "9%",
-      paddingRight: "9%",
-    },
+// barStyle: { //   backgroundColor: "#", //   width: "100%", //   alignSelf: "center", //   shadowOpacity: 0, //   alignItems: "center", //   alignSelf: "center",
+       //   paddingLeft: "9%",
+    //   paddingRight: "9%",
+    // },
   },
 };
 
 // TCOMB THEME
 let formStyle = _.cloneDeep(t.form.Form.stylesheet);
-formStyle.textbox.normal.color = "#444";
-formStyle.textbox.normal.height = 55;
-formStyle.textbox.normal.borderWidth = 0;
+formStyle.textbox.normal.color= "#444";
+formStyle.textbox.normal.height = 55; formStyle.textbox.normal.borderWidth = 0;
 formStyle.textbox.error.borderWidth = 0;
 formStyle.textboxView.normal.borderWidth = 0;
 formStyle.textboxView.error.borderWidth = 0;

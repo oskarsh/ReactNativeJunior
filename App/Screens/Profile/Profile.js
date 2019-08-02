@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { ThemeContext } from '../../Theme/themes';
-import Button from "../../Components/Button/Button"
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
+import ThemedButton from "../../Components/ThemedComponents/ThemedButton"
+import ThemedText from "../../Components/ThemedComponents/ThemedText"
+
 
 class Profile extends Component {
 
@@ -19,15 +22,15 @@ class Profile extends Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{flex: 1, backgroundColor: theme.background}}>
-        <Text> Profile </Text>
-        <Button
-          onPress={() => this.props.navigation.navigate("Settings")}
+      <ThemedView style={{ flex: 1 }}>
+        <SafeAreaView >
+          <ThemedText> Profile </ThemedText>
+          <ThemedButton
           title="Settings"
-          color="#841584"
-          accessibilityLabel="This Button will Log you for the App"
-        />
-      </View>
+          onPress={() => this.props.navigation.navigate("Settings")}
+          ></ThemedButton>
+        </SafeAreaView>
+      </ThemedView>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
-import Button from "../../../Components/Button/Button"
+import Button from "../../../Components/ThemedComponents/ThemedButton"
 import t from "tcomb-form-native";
 import { ThemeContext, formStyle } from '../../../Theme/themes';
 

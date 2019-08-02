@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
-import Button from "../../Components/Button/Button"
+import Button from "../../Components/ThemedComponents/ThemedButton"
 import { ThemeContext } from '../../Theme/themes';
 
 class IntroScreen3 extends Component {
