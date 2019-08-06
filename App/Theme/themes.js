@@ -78,16 +78,6 @@ export const themes = {
       paddingTop: 5,
       paddingBottom: 10,
     },
-    barStyle: {
-      backgroundColor: "#fffeef",
-      width: "100%",
-      alignSelf: "center",
-      shadowOpacity: 0,
-      alignItems: "center",
-      alignSelf: "center",
-      paddingLeft: "9%",
-      paddingRight: "9%",
-    },
   },
 
 

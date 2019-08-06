@@ -5,8 +5,9 @@ import Button from "../../Components/ThemedComponents/ThemedButton"
 import ThemedView from "../../Components/ThemedComponents/ThemedView"
 import ThemedText from "../../Components/ThemedComponents/ThemedText"
 import ThemedHeader from "../../Components/ThemedComponents/ThemedHeader"
-class Dashboard extends Component {
 
+class Dashboard extends Component {
+  
   // Hiding the Header for this Screen
   static navigationOptions = {
          header: null

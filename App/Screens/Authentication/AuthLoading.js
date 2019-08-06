@@ -39,7 +39,7 @@ class AuthLoading extends Component {
   render() {
     return (
       <View>
-        <Text> AuthLoading </Text>
+        <ActivityIndicator size="large"/>
       </View>
     );
   }

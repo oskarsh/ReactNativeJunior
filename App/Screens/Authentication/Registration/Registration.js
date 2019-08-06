@@ -24,7 +24,6 @@ class Registration extends Component {
   Password = t.refinement(t.String, pass => {
     let value = this.state.value;
     let originPass = value.password;
-    console.log(originPass);
     return pass === originPass;
   });
 
@@ -68,7 +67,6 @@ class Registration extends Component {
     return {
       title: 'Registration',
       headerTintColor: theme.foreground,
-      headerStyle: { backgroundColor: theme.background},
     };
   };
 
@@ -136,20 +134,6 @@ const styles = StyleSheet.create({
       padding: 24,
       flex: 1,
       justifyContent: "flex-end",
-  },
-  header: {
-      fontSize: 36,
-      marginBottom: 48,
-  },
-  input: {
-      height: 40,
-      borderColor: "#000000",
-      borderBottomWidth: 1,
-      marginBottom: 36,
-  },
-  btnContainer: {
-      backgroundColor: "white",
-      marginTop: 12,
   },
 });
 

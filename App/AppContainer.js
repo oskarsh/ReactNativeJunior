@@ -10,9 +10,6 @@ import {
 } from "react-navigation";
 
 import MainBottomNavigation from "./Navigation/BottomBar"
-import IntroScreen1 from "./Screens/AppIntro/IntroScreen1";
-import IntroScreen2 from "./Screens/AppIntro/IntroScreen2";
-import IntroScreen3 from "./Screens/AppIntro/IntroScreen3";
 import AuthLoading from "./Screens/Authentication/AuthLoading";
 import Auth from "./Screens/Authentication/Auth";
 import SplashScreen from "./Screens/Splash/SplashScreen";
@@ -20,18 +17,7 @@ import Login from "./Screens/Authentication/Login/Login"
 import Registration from "./Screens/Authentication/Registration/Registration"
 import IntroStack from "./Navigation/IntroStack"
 import ProfileStack from "./Navigation/ProfileStack";
-
-
-const AuthStack = createStackNavigator(
-  {
-    AuthScreen: Auth,
-    Login: Login,
-    Registration: Registration
-  },
-  {
-    initialRouteName: "AuthScreen",
-  },
-);
+import AuthStack from "./Navigation/AuthStack"
 
 
 export default createAppContainer(

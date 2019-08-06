@@ -20,7 +20,6 @@ class Settings extends Component {
   }
 
   render() {
-    console.log(this.props.navigation)
     return (
       <View style={{flex: 1, backgroundColor: theme.background}}>
        <View style={[theme.imgContainer, {flexGrow: 1,}]}>
