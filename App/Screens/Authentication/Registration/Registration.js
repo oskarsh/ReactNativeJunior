@@ -32,7 +32,7 @@ class Registration extends Component {
     email: this.Email,
     password: t.String,
   });
-  
+
   onFormChange = value => {
     this.setState({ value });
   };
@@ -93,32 +93,35 @@ class Registration extends Component {
     theme = this.context.theme;
     return (
       <KeyboardAvoidingView
-      style={{flex: 1, backgroundColor: theme.background}}
-      behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={120}
-    >
-       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-       <View style={styles.inner}>
+        style={{ flex: 1, backgroundColor: theme.background }}
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={120}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.inner}>
+            <View style={{ width: "100%", alignItems: "center" }}>
 
-        <View style={[theme.imgContainer, {flexGrow: 4,}]}>
-            <Image
-            style={theme.img}
-            source={require('../../../Assets/flame-8.png')}
+              <View style={[theme.imgContainer, { flexGrow: 4, }]}>
+                <Image
+                  style={theme.img}
+                  source={require('../../../Assets/flame-8.png')}
+                />
+              </View>
+            </View>
+
+            <Form
+              ref={c => (this._form = c)}
+              type={this.User}
+              options={this.options}
+              value={this.state.value}
+              onChange={this.onFormChange}
             />
-        </View>
-        <Form
-            ref={c => (this._form = c)}
-            type={this.User}
-            options={this.options}
-            value={this.state.value}
-            onChange={this.onFormChange}
-          />
-        <Button
-          onPress={() => this.props.navigation.navigate("IntroStack")}
-          title="Sign Up"
-          accessibilityLabel="This Button will Log you for the App"
-        />
-       </View>
+            <Button
+              onPress={() => this.props.navigation.navigate("IntroStack")}
+              title="Sign Up"
+              accessibilityLabel="This Button will Log you for the App"
+            />
+          </View>
 
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
@@ -128,12 +131,12 @@ class Registration extends Component {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
+    flex: 1,
   },
   inner: {
-      padding: 24,
-      flex: 1,
-      justifyContent: "flex-end",
+    padding: 24,
+    flex: 1,
+    justifyContent: "flex-end",
   },
 });
 

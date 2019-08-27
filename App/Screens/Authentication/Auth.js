@@ -22,7 +22,7 @@ class Auth extends React.Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{ flex: 1, justifyContent: "space-around", backgroundColor: theme.background }}>
+      <View style={{ flex: 1, justifyContent: "space-around", alignItems: "center", backgroundColor: theme.background }}>
         <ThemedHeader>Abstraction</ThemedHeader>
         <View style={theme.imgContainer}>
           <Image
@@ -30,7 +30,7 @@ class Auth extends React.Component {
             source={require('../../Assets/flame-6.png')}
           />
         </View>
-        <View>
+        <View style={{width: "100%"}}>
 
           <Button
             onPress={() => this.props.navigation.navigate("Login")}

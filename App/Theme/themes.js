@@ -35,15 +35,18 @@ const defaults = {
     margin: 10,
   },
   img: {
-    width: "80%",
+    width: "100%",
     borderRadius: 10,
-    height: 200,
+    height: 300,
     marginBottom: 20,
     padding:10,
   },
   // Adds shadow to the image, sinde Image itself cannot display shadow but a view can
   imgContainer: {
     alignItems: 'center', margin: 10, shadowColor: "#000",
+    width: "80%",
+    justifyContent: 'center',
+    alignSelf: "center",
     shadowOffset: {
       width: 0,
       height: 12,

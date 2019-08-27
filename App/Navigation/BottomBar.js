@@ -2,17 +2,15 @@ import React, { Component } from "react";
 import { createAppContainer, createStackNavigator, createBottomTabNavigator, BottomTabBar } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-
-
 import { ThemeContext } from "../Theme/themes";
-
 import DashboardStack from "../Navigation/DashboardStack"
 import ProfileStack from "../Navigation/ProfileStack"
-
+import {YellowBox} from 'react-native';
 class TabBarComponent extends React.Component {
 
   render() {
     theme = this.context.theme;
+
     return (
       <BottomTabBar
         {...this.props}
@@ -25,7 +23,6 @@ class TabBarComponent extends React.Component {
     );
   }
 }
-
 TabBarComponent.contextType = ThemeContext
 
 export default createBottomTabNavigator(
@@ -46,10 +43,10 @@ export default createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => (
           <Ionicons name="ios-person" size={30} color={tintColor} />
         )
+
       }
     },
   },
-
   {
     tabBarComponent: props =>
       <TabBarComponent
@@ -58,6 +55,6 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       showLabel: false
     },
-    
+
   },
 );

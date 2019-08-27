@@ -26,12 +26,11 @@ class Dashboard extends Component {
       <ThemedView style={{flex: 1}}>
       <SafeAreaView >
         <ThemedHeader> Dashboard</ThemedHeader>
-        <View style={[theme.imgContainer]}>
+        <View style={[theme.imgContainer, {height: "100%", justifyContent: 'center', opacity: 50}]}>
             <Image
             style={theme.img}
             source={require('../../Assets/flame-searching.png')}
             />
-
         </View>
       </SafeAreaView>
       </ThemedView>
