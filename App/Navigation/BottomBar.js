@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createAppContainer, createStackNavigator, createBottomTabNavigator, BottomTabBar } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Feather from "react-native-vector-icons/Feather"
 import { ThemeContext } from "../Theme/themes";
 import DashboardStack from "../Navigation/DashboardStack"
 import ProfileStack from "../Navigation/ProfileStack"
@@ -33,7 +33,7 @@ export default createBottomTabNavigator(
       navigationOptions: {
         // tabBarLabel: "Dashboard",
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-flame" size={30} color={tintColor} />
+          <Feather name="home" size={30} color={tintColor} />
         ),
       }
     },
@@ -44,7 +44,7 @@ export default createBottomTabNavigator(
           headerVisible: false,
         // tabBarLabel: "Profile",
         tabBarIcon: ({ tintColor }) => (
-          <Ionicons name="ios-person" size={30} color={tintColor} />
+          <Feather name="user" size={30} color={tintColor} />
         )
 
       }
