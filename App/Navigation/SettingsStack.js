@@ -11,8 +11,12 @@ import Help from "../Screens/Settings/Help";
 import Settings from "../Screens/Settings/Settings";
 
 export default createStackNavigator({
-  Profile: Profile,
+  Settings: Settings,
+  General: General,
+  About: About,
+  PrivacyPolicy: PrivacyPolicy,
+  Help: Help,
 },
 {
-  initialRouteName: "Profile"
+  initialRouteName: "Settings"
 })

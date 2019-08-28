@@ -5,12 +5,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { ThemeContext } from "../Theme/themes";
 import DashboardStack from "../Navigation/DashboardStack"
 import ProfileStack from "../Navigation/ProfileStack"
-import {YellowBox} from 'react-native';
+import Profile from "../Screens/Profile/Profile"
+
 class TabBarComponent extends React.Component {
 
   render() {
     theme = this.context.theme;
-
+    
     return (
       <BottomTabBar
         {...this.props}
@@ -37,8 +38,10 @@ export default createBottomTabNavigator(
       }
     },
     Profile: {
-      screen: ProfileStack,
+      screen: Profile,
+      headerMode: 'none',
       navigationOptions: {
+          headerVisible: false,
         // tabBarLabel: "Profile",
         tabBarIcon: ({ tintColor }) => (
           <Ionicons name="ios-person" size={30} color={tintColor} />
