@@ -29,7 +29,7 @@ export default createAppContainer(
     },
     {
       //TESTING ONLY INITAL ROUTE SHOULD BE AUTHLOADING
-      initialRouteName: "App",
+      initialRouteName: "AuthLoading",
     },
   ),
 );

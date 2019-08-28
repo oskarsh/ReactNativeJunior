@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, KeyboardAvoidingView, Image, TouchableWithoutFeedback, StyleSheet, Keyboard } from 'react-native';
+import {
+  View,
+  Text,
+  KeyboardAvoidingView,
+  Image,
+  TouchableWithoutFeedback,
+  StyleSheet,
+  Keyboard,
+  Dimensions
+} from 'react-native';
 import Button from "../../../Components/ThemedComponents/ThemedButton"
 import t from "tcomb-form-native";
 import { ThemeContext, formStyle } from '../../../Theme/themes';
@@ -94,8 +103,8 @@ class Registration extends Component {
     return (
       <KeyboardAvoidingView
         style={{ flex: 1, backgroundColor: theme.background }}
-        behavior={Platform.OS === "ios" ? "padding" : null}
-        keyboardVerticalOffset={120}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={Dimensions.get('window').height * 0.2}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.inner}>
