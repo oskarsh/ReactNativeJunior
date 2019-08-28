@@ -18,12 +18,29 @@
 ## Features
 
 * dark / light themes by default
+* easily configure look and feel
 * minimalistic
 * Login / Register UI
 * Dashboard Screen
 * Profile Screen
 * Settings Screen
 * Logout
+
+
+
+
+## Registration
+<p align="center">
+    <img alt="" title="ReactNativeJunior" src="./assets/register.gif" height="400">    
+
+## Login
+<p align="center">
+    <img alt="" title="ReactNativeJunior" src="./assets/login.gif" height="400">
+
+## Light Dark Themes
+<p align="center">
+    <img alt="" title="ReactNativeJunior" src="./assets/lightdark.gif" height="400">
+
 
 
 

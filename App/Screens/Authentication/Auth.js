@@ -23,7 +23,7 @@ class Auth extends React.Component {
     theme = this.context.theme;
     return (
       <View style={{ flex: 1, justifyContent: "space-around", alignItems: "center"}}>
-        <ThemedHeader>Abstraction</ThemedHeader>
+        <ThemedHeader style={{padding: 20}}>ReactNativeJunior</ThemedHeader>
         <View style={theme.imgContainer}>
           <Image
             style={theme.img}

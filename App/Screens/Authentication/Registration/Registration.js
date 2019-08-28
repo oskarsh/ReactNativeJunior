@@ -104,7 +104,7 @@ class Registration extends Component {
       <KeyboardAvoidingView
         style={{ flex: 1, backgroundColor: theme.background }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Dimensions.get('window').height * 0.2}
+        keyboardVerticalOffset={Dimensions.get('window').height * 0.15}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.inner}>

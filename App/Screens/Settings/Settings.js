@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import { ThemeContext } from '../../Theme/themes';
+import ThemedView from "../../Components/ThemedComponents/ThemedView"
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Button from "../../Components/ThemedComponents/ThemedButton";
 import Text from "../../Components/ThemedComponents/ThemedText";
@@ -26,7 +27,7 @@ class Settings extends Component {
   ListItem = (item, route) => {
     return (
       <TouchableOpacity
-        onPress={() => this.props.navigation.push()}
+        onPress={() => this.props.navigation.push(route)}
         style={{ height: 50, margin: 5, justifyContent: "center", paddingLeft: 5 }}
       >
         <Text>{item}</Text>
@@ -35,13 +36,14 @@ class Settings extends Component {
   }
 
   render() {
+    theme = this.context.theme;
     return (
-      <View style={{ flex: 1,}}>
+      <ThemedView style={{ flex: 1}}>
         {this.ListItem("General", "General")}
         {this.ListItem("About", "About")}
         {this.ListItem("Help", "Help")}
         {this.ListItem("Privacy Policy", "PrivacyPolicy")}
-        <View style={{flex: 1, justifyContent: "flex-end", marginBottom: 15}}>
+        <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 15 }}>
           <Button
             onPress={() => this.props.navigation.navigate("Auth")}
             title="Logout"
@@ -50,7 +52,7 @@ class Settings extends Component {
           />
         </View>
 
-      </View>
+      </ThemedView>
     );
   }
 }

@@ -26,7 +26,7 @@ class Profile extends Component {
     return (
       <ThemedView style={{ flex: 1 }}>
         <SafeAreaView >
-          <View style={{ flexDirection: "row", backgroundColor: "#dadfe0", height: 80, justifyContent: 'center', }}>
+          <View style={{ flexDirection: "row", height: 80, justifyContent: 'center', }}>
             <View style={{ justifyContent: 'center',}}>
               <ThemedHeader style={{  }}>Your Profile</ThemedHeader>
             </View>
@@ -38,7 +38,7 @@ class Profile extends Component {
                 <Feather
                   name="settings"
                   size={30}
-                  color="black"
+                  color={theme.textColor}
                   style={{ margin: 10, alignSelf: "flex-end" }}
                 />
               </TouchableOpacity>
