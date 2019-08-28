@@ -14,7 +14,7 @@ class General extends Component {
     return {
       title: 'General',
       headerTintColor: theme.foreground,
-      headerStyle: { backgroundColor: theme.background},
+      headerStyle: { backgroundColor: theme.background },
     };
   };
 
@@ -25,13 +25,17 @@ class General extends Component {
     };
   }
 
-  onPress = () => {
+  onPress = (toggleTheme) => {
+    this.setState({
+      switchOn: this.state.switchOn ? false : true,
+    })
+    toggleTheme()
   }
 
   render() {
     theme = this.context.theme;
     return (
-      <ThemedView style={{ flex: 1}}>
+      <ThemedView style={{ flex: 1 }}>
         <View style={{ flex: 1, flexDirection: "row", height: 50 }}>
           <View style={{ flex: 1, flexGrow: 2, alignItems: 'center', padding: 5 }}>
             <ThemedText>Toggle Theme</ThemedText>
@@ -39,9 +43,9 @@ class General extends Component {
           <View style={{ flex: 1, alignItems: 'center', padding: 5 }}>
             <ThemeContext.Consumer>
               {({ theme, toggleTheme }) => (
-                <ThemedButton
-                  title="toggle theme"
-                  onPress={toggleTheme}
+                <SwitchToggle
+                  switchOn={this.state.switchOn}
+                  onPress={() => this.onPress(toggleTheme)}
                 />
               )}
             </ThemeContext.Consumer>

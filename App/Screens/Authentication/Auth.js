@@ -22,7 +22,7 @@ class Auth extends React.Component {
   render() {
     theme = this.context.theme;
     return (
-      <View style={{ flex: 1, justifyContent: "space-around", alignItems: "center", backgroundColor: theme.background }}>
+      <View style={{ flex: 1, justifyContent: "space-around", alignItems: "center"}}>
         <ThemedHeader>Abstraction</ThemedHeader>
         <View style={theme.imgContainer}>
           <Image

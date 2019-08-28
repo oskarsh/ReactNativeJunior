@@ -6,7 +6,7 @@ import ThemedText from "./ThemedText"
 class ThemedHeader extends React.Component {
   render() {
     theme = this.context.theme;
-    return <Text style={[{...this.props.style}, {color: theme.textColor}, theme.header]}>
+    return <Text style={[{...this.props.style}, {color: theme.textColor, fontFamily: "Lato-Bold"}, theme.header]}>
       {this.props.children}
     </Text>;
   }

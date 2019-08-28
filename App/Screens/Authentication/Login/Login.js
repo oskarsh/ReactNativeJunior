@@ -83,33 +83,33 @@ class Login extends Component {
     theme = this.context.theme;
     return (
       <KeyboardAvoidingView
-      style={{flex: 1, backgroundColor: theme.background}}
-      behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={170}
-    >
-       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-       <View style={styles.inner}>
-
-        <View style={[theme.imgContainer, {flexGrow: 4,}]}>
-            <Image
-            style={theme.img}
-            source={require('../../../Assets/flame-sign-up.png')}
+        style={{ flex: 1, backgroundColor: theme.background }}
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        keyboardVerticalOffset={170}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.inner}>
+            <View style={[theme.imgContainer, { flexGrow: 4 }]}>
+              <Image
+                style={[theme.img, {width: "90%" }]}
+                source={require('../../../Assets/flame-sign-up.png')}
+                resizeMode="contain"
+              />
+            </View>
+            <Form
+              stylesheet={formStyle}
+              ref={c => (this._form = c)}
+              type={this.User}
+              options={this.options}
+              value={this.state.value}
+              onChange={this.onFormChange}
             />
-        </View>
-        <Form
-            stylesheet={formStyle}
-            ref={c => (this._form = c)}
-            type={this.User}
-            options={this.options}
-            value={this.state.value}
-            onChange={this.onFormChange}
-          />
-        <Button
-          onPress={() => this.props.navigation.navigate("App")}
-          title="Sign In"
-          accessibilityLabel="This Button will Log you for the App"
-        />
-       </View>
+            <Button
+              onPress={() => this.props.navigation.navigate("App")}
+              title="Sign In"
+              accessibilityLabel="This Button will Log you for the App"
+            />
+          </View>
 
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
@@ -119,12 +119,12 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
+    flex: 1,
   },
   inner: {
-      padding: 24,
-      flex: 1,
-      justifyContent: "flex-end",
+    padding: 24,
+    flex: 1,
+    justifyContent: "flex-end",
   },
 });
 

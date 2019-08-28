@@ -9,23 +9,18 @@ import {
   createAppContainer,
 } from "react-navigation";
 
-import MainBottomNavigation from "./Navigation/BottomBar"
 import AppStack from "./Navigation/AppStack";
 import AuthLoading from "./Screens/Authentication/AuthLoading";
-import Auth from "./Screens/Authentication/Auth";
 import SplashScreen from "./Screens/Splash/SplashScreen";
-import Login from "./Screens/Authentication/Login/Login"
-import Registration from "./Screens/Authentication/Registration/Registration"
-import IntroStack from "./Navigation/IntroStack"
 import ProfileStack from "./Navigation/ProfileStack";
 import AuthStack from "./Navigation/AuthStack";
-
+import AppIntro from "./Screens/AppIntro/AppIntro";
 
 
 export default createAppContainer(
   createSwitchNavigator(
     {
-      IntroStack: IntroStack,
+      IntroStack: AppIntro,
       App: AppStack,
       AuthLoading: AuthLoading,
       Auth: AuthStack,
@@ -34,7 +29,7 @@ export default createAppContainer(
     },
     {
       //TESTING ONLY INITAL ROUTE SHOULD BE AUTHLOADING
-      initialRouteName: "AuthLoading",
+      initialRouteName: "App",
     },
   ),
 );

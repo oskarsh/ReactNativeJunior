@@ -20,6 +20,16 @@
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-BlackItalic.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-BoldItalic.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>Lato-LightItalic.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-RegularItalic.ttf</string>
+		<string>Lato-Thin.ttf</string>
+		<string>Lato-ThinItalic.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
