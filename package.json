@@ -10,8 +10,8 @@
   "dependencies": {
     "@react-native-community/async-storage": "github:react-native-community/async-storage",
     "lodash": "^4.17.15",
-    "react": "16.8.6",
-    "react-native": "0.60.4",
+    "react": "16.9.0",
+    "react-native": "0.61.1",
     "react-native-app-intro-slider": "^3.0.0",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-paper": "^2.16.0",
