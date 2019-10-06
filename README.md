@@ -1,9 +1,7 @@
 
-<h1 align="center"> ReactNativeJunior </h1> <br>
-<br>
 
 <p align="center">
-  <img alt="ReactNativeJunior" title="ReactNativeJunior" src="./assets/logo.jpg" height="150">
+  <img alt="ReactNativeJunior" title="ReactNativeJunior" src="./assets/header.png">
 <p align="center">
    A free, open-source React Native Template to quickly Bootstrap an application
 </p>
@@ -12,6 +10,7 @@
     <img alt="" title="ReactNativeJunior" src="https://img.shields.io/badge/License-Apache%202-blue">
     <img alt="" title="ReactNativeJunior" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">
     <img alt="" title="ReactNativeJunior" src="https://img.shields.io/badge/Build%20with-ReactNative-blue">
+
 
 
 
