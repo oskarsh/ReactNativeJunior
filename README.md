@@ -47,4 +47,4 @@
 
 I do not like to write Boilerplate Code over and over again to provide basic functionality.
 
-The Vision for ReactNativeJunior is to provide a minimalistic version of a Basic React Native App to quickly Bootstrap a new Project. The Goal is to use as few dependencies as possible giving you as much flexibility as possible. I do not use a state managment System since it is most often not needed and adds complexity 
+The Vision for ReactNativeJunior is to provide a minimalistic version of a Basic React Native App to quickly Bootstrap a new Project. The Goal is to use as few dependencies as possible giving you as much flexibility as possible. 
